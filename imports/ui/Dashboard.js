@@ -1,7 +1,7 @@
 import React from 'react';
 import PrivateHeader from './PrivateHeader';
 
-export default() => {
+export default( ) => {
     return (
         <div>
             <PrivateHeader title="Dashboard"/>
