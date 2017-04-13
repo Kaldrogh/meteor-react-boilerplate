@@ -1,11 +1,11 @@
 // Colors
-$generic-color: #222222;
-$light-grey: #dddddd;
-$yellow: #ECD078;
+$generic-color: #222;
+$light-grey: #ddd;
+$yellow: #ecd078;
 $orange: #ef6c00;
-$red: #C02942;
+$red: #c02942;
 $purple: #542437;
-$blue: #53777A;
+$blue: #53777a;
 
 // Spacing
 $space: 1.4rem;
@@ -13,7 +13,7 @@ $site-max-width: 60rem;
 
 // Shadows
 
-$box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
+$box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 
 // Font sizes
 $base-font-size: 1.4rem;
@@ -24,15 +24,15 @@ $input-spacing: 1rem;
 
 // Boxed view
 $boxed-view-overlay-bg: $light-grey;
-$boxed-view-bg: white;
+$boxed-view-bg: #fff;
 
 // Button
-$button-bg : $orange;
-$button-color: white;
+$button-bg: $orange;
+$button-color: #fff;
 $button-secondary-bg: #f9f9f9;
-$button-secondary-color: #777777;
+$button-secondary-color: #777;
 $button-secondary-border-color: $light-grey;
 
 // Header
 $header-bg: $orange;
-$header-color: white;
+$header-color: #fff;
