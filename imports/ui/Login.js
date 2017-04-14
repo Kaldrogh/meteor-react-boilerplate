@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Meteor } from "meteor/meteor";
 
+export default Prout;
 class Login extends React.Component {
   constructor(props) {
     super(props);
