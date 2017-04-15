@@ -6,14 +6,22 @@ if (Meteor.isServer) {
   describe("Notes", function() {
     const noteOne = {
       _id: "testNoteId1",
-      title: "My title",
-      body: "Note body",
+      title: "Title of Note 1",
+      body: "Body of Note 1",
       updatedAt: 0,
       userId: "testUserId1"
+    };
+    const noteTwo = {
+      _id: "testNoteId2",
+      title: "Title of Note 2",
+      body: "Body of Note 2",
+      updatedAt: 0,
+      userId: "testUserId2"
     };
     beforeEach(function() {
       Notes.remove({});
       Notes.insert(noteOne);
+      Notes.insert(noteTwo);
     });
 
     it("should insert new notes", function() {
@@ -104,9 +112,22 @@ if (Meteor.isServer) {
           {
             userId: noteOne.userId
           },
-          [{ _id: "prout" }, { title: noteOne.title }]
+          [{ title: noteOne.title }]
         );
       }).toThrow();
+    });
+    it('should return a user notes', function() {
+        const result = Meteor.server.publish_handlers.notes.apply({userId: noteOne.userId});
+        const notes = result.fetch();
+
+        expect(notes.length).toBe(1);
+        expect(notes[0]).toEqual(noteOne);
+    });
+    it("should not return any note if the user doesn't have, at least, one note in the DB", function() {
+        const result = Meteor.server.publish_handlers.notes.apply({userId: 'InvalidUserID'});
+        const fetchedNotes = result.fetch();
+
+        expect(fetchedNotes.length).toBe(0);
     });
   });
 }
